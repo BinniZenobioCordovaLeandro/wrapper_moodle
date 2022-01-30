@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.0.1+1
   url_launcher: ^6.0.18
   webview_flutter: ^3.0.0
 
@@ -38,3 +39,19 @@ flutter_icons:
   ios: true
   remove_alpha_ios: true
   image_path: "assets/icon/icon.png"
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: true
+
+  fullscreen: true
+
+  color: "#F2F2F7"
+  # background_image: "assets/background.png"
+  image: assets/splash/dark.png
+
+  color_dark: "#000000"
+  # background_image_dark: "assets/dark-background.png"
+  image_dark: assets/splash/light.png
+  # android12: true
