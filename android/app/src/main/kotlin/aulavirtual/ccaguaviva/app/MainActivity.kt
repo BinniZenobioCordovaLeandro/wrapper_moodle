@@ -1,4 +1,4 @@
-package com.example.ccaguaviva
+package aulavirtual.ccaguaviva.app
 
 import io.flutter.embedding.android.FlutterActivity
 
