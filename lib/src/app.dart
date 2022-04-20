@@ -1,5 +1,6 @@
 import 'package:ccaguaviva/src/screens/home_screen.dart';
 import 'package:ccaguaviva/src/screens/web_view_screen.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,6 +19,12 @@ class MyApp extends StatelessWidget {
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
+        FirebaseAnalytics.instance.logEvent(
+          name: 'is_web_mode',
+          parameters: <String, dynamic>{
+            'is_web_mode': settingsController.isWebMode.toString(),
+          },
+        );
         return MaterialApp(
           restorationScopeId: 'app',
           localizationsDelegates: const [
