@@ -27,7 +27,9 @@ class SettingsController with ChangeNotifier {
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
   Future<void> loadSettings() async {
-    final bool remoteIsWebMode = FirebaseRemoteConfig.instance.getBool('isWebMode');
+    final _remoteConfig = FirebaseRemoteConfig.instance;
+    await _remoteConfig.fetchAndActivate();
+    final bool remoteIsWebMode = _remoteConfig.getBool('isWebMode');
     _themeMode = await _settingsService.themeMode();
     _isWebMode = remoteIsWebMode;
 
