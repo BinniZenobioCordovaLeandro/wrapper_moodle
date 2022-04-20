@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "822124063540",
+    "project_id": "ccaguaviva-7b357",
+    "storage_bucket": "ccaguaviva-7b357.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822124063540:android:0a783c016c630bff275361",
+        "android_client_info": {
+          "package_name": "aulavirtual.ccaguaviva.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822124063540-n6hv8ogm760p1o9k0bt44nl0fsiihafd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxrbW6IkV2FLl6IvOIDkIWXU8UcjpEMKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822124063540-n6hv8ogm760p1o9k0bt44nl0fsiihafd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
