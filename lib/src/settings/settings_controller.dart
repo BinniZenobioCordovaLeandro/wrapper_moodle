@@ -18,7 +18,6 @@ class SettingsController with ChangeNotifier {
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
   late bool _isWebMode;
-  late FirebaseRemoteConfig _remoteConfig;
 
   // Allow Widgets to read the user's preferred ThemeMode.
   ThemeMode get themeMode => _themeMode;
@@ -28,7 +27,7 @@ class SettingsController with ChangeNotifier {
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
   Future<void> loadSettings() async {
-    final bool remoteIsWebMode = _remoteConfig.getBool('remoteIsWebMode');
+    final bool remoteIsWebMode = FirebaseRemoteConfig.instance.getBool('isWebMode');
     _themeMode = await _settingsService.themeMode();
     _isWebMode = remoteIsWebMode;
 
