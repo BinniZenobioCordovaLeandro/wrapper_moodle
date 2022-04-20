@@ -18,7 +18,6 @@ class _WebViewScreenState extends State<WebViewScreen> {
   @override
   void initState() {
     super.initState();
-    // Enable virtual display.
     if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 

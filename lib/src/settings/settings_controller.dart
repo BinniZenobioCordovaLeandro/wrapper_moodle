@@ -1,3 +1,4 @@
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 
 import 'settings_service.dart';
@@ -16,15 +17,20 @@ class SettingsController with ChangeNotifier {
   // Make ThemeMode a private variable so it is not updated directly without
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
+  late bool _isWebMode;
+  late FirebaseRemoteConfig _remoteConfig;
 
   // Allow Widgets to read the user's preferred ThemeMode.
   ThemeMode get themeMode => _themeMode;
+  bool get isWebMode => _isWebMode;
 
   /// Load the user's settings from the SettingsService. It may load from a
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
   Future<void> loadSettings() async {
+    final bool remoteIsWebMode = _remoteConfig.getBool('remoteIsWebMode');
     _themeMode = await _settingsService.themeMode();
+    _isWebMode = remoteIsWebMode;
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();

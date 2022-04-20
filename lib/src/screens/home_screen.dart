@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ccaguaviva/src/providers/url_launcher_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -14,9 +13,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    UrlLauncherProvider().launchInWebViewOrVC(
-      'https://www.aulavirtual.ccaguaviva.website/',
-    );
   }
 
   @override
