@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           },
         );
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           restorationScopeId: 'app',
           localizationsDelegates: const [
             AppLocalizations.delegate,
