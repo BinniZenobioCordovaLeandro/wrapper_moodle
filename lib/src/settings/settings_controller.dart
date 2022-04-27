@@ -18,10 +18,15 @@ class SettingsController with ChangeNotifier {
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
   late bool _isWebMode;
+  late bool _isLogged;
+
+  final String _user = '70063706';
+  final String _password = '937319171';
 
   // Allow Widgets to read the user's preferred ThemeMode.
   ThemeMode get themeMode => _themeMode;
   bool get isWebMode => _isWebMode;
+  bool get isLogged => _isLogged;
 
   /// Load the user's settings from the SettingsService. It may load from a
   /// local database or the internet. The controller only knows it can load the
@@ -53,5 +58,15 @@ class SettingsController with ChangeNotifier {
     // Persist the changes to a local database or the internet using the
     // SettingService.
     await _settingsService.updateThemeMode(newThemeMode);
+  }
+
+  Future<bool> updateIsloged(user, password) async {
+    if (user == _user && password == _password) {
+      _isLogged = true;
+    } else {
+      _isLogged = false;
+    }
+    notifyListeners();
+    return _isLogged;
   }
 }

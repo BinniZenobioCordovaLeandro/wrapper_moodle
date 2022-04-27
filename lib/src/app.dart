@@ -42,9 +42,13 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
-          home: settingsController.isWebMode ? const WebViewScreen(
-            url: 'https://www.aulavirtual.ccaguaviva.website/',
-          ): const HomeScreen(),
+          home: settingsController.isWebMode
+              ? const WebViewScreen(
+                  url: 'https://www.aulavirtual.ccaguaviva.website/',
+                )
+              : HomeScreen(
+                  controller: settingsController,
+                ),
         );
       },
     );

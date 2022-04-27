@@ -1,10 +1,14 @@
 import 'package:ccaguaviva/src/providers/url_launcher_provider.dart';
+import 'package:ccaguaviva/src/screens/login_screen.dart';
 import 'package:ccaguaviva/src/settings/settings_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  final SettingsController controller;
+
   const HomeScreen({
     Key? key,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -12,6 +16,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  login(user, password) {}
+
   @override
   void initState() {
     super.initState();
@@ -43,6 +49,23 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             tooltip: 'Acceder',
           ),
+          if (!widget.controller.isLogged)
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(
+                      controller: widget.controller,
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.login,
+              ),
+              tooltip: 'Acceder',
+            ),
         ],
       ),
       body: SingleChildScrollView(
