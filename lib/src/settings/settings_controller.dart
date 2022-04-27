@@ -18,7 +18,7 @@ class SettingsController with ChangeNotifier {
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
   late bool _isWebMode;
-  late bool _isLogged;
+  late bool _isLogged = false;
 
   final String _user = '70063706';
   final String _password = '937319171';
