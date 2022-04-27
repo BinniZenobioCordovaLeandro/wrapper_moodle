@@ -59,7 +59,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '822124063540',
     projectId: 'ccaguaviva-7b357',
     storageBucket: 'ccaguaviva-7b357.appspot.com',
-    iosClientId: '822124063540-q8pd4osbsj0cm59csr18o1dm6o90eb7j.apps.googleusercontent.com',
+    iosClientId:
+        '822124063540-q8pd4osbsj0cm59csr18o1dm6o90eb7j.apps.googleusercontent.com',
     iosBundleId: 'aulavirtual.ccaguaviva.app',
   );
 }

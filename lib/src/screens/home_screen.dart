@@ -1,5 +1,7 @@
+import 'package:ccaguaviva/src/models/node_data_model.dart';
 import 'package:ccaguaviva/src/providers/url_launcher_provider.dart';
 import 'package:ccaguaviva/src/screens/login_screen.dart';
+import 'package:ccaguaviva/src/screens/node_screen.dart';
 import 'package:ccaguaviva/src/settings/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_treeview/flutter_treeview.dart';
@@ -18,6 +20,127 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
+  final List<Node> nodes = [
+    Node(
+      label: 'Cursos',
+      key: 'Cursos',
+      data: 'Cursos',
+      children: [
+        Node(
+          label: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
+          key: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
+          data: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
+          children: [
+            Node(
+              label:
+                  'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+              data: NodeDataModel(
+                title:
+                    'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+                description: 'En este curso ',
+                date: 'Enero - Junio',
+                url: 'https://www.ccaguaviva.com/video',
+                urlVideo: 'https://www.ccaguaviva.com/video',
+                urlImage: 'https://www.ccaguaviva.com/image',
+              ),
+            ),
+            Node(
+              label: 'Clase 2: El Líder Palmera',
+              key: 'Clase 2: El Líder Palmera',
+              data: NodeDataModel(
+                title: 'Clase 2: El Líder Palmera',
+                description: 'En este curso ',
+                date: 'Enero - Junio',
+                url: 'https://www.ccaguaviva.com/video',
+                urlVideo: 'https://www.ccaguaviva.com/video',
+                urlImage: 'https://www.ccaguaviva.com/image',
+              ),
+            ),
+            Node(
+              label: 'Clase 3: El Líder Samurai',
+              key: 'Clase 3: El Líder Samurai',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 4: El Líder Pacificador',
+              key: 'Clase 4: El Líder Pacificador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 5: El lider planificador',
+              key: 'Clase 5: El lider planificador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 7: El Líder Entrenador',
+              key: 'Clase 7: El Líder Entrenador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 8: El Líder Guerrero',
+              key: 'Clase 8: El Líder Guerrero',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 9: El Líder Matagigantes',
+              key: 'Clase 9: El Líder Matagigantes',
+              data: NodeDataModel(),
+            ),
+          ],
+        ),
+        Node(
+          label: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
+          key: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
+          data: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
+          children: [
+            Node(
+              label:
+                  'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 2: El Líder Palmera',
+              key: 'Clase 2: El Líder Palmera',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 3: El Líder Samurai',
+              key: 'Clase 3: El Líder Samurai',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 4: El Líder Pacificador',
+              key: 'Clase 4: El Líder Pacificador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 5: El lider planificador',
+              key: 'Clase 5: El lider planificador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 7: El Líder Entrenador',
+              key: 'Clase 7: El Líder Entrenador',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 8: El Líder Guerrero',
+              key: 'Clase 8: El Líder Guerrero',
+              data: NodeDataModel(),
+            ),
+            Node(
+              label: 'Clase 9: El Líder Matagigantes',
+              key: 'Clase 9: El Líder Matagigantes',
+              data: NodeDataModel(),
+            ),
+          ],
+        ),
+      ],
+    ),
+  ];
 
   @override
   void initState() {
@@ -67,16 +190,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               tooltip: 'Acceder',
             ),
-          if (widget.controller.isLogged)
-            IconButton(
-              onPressed: () {
-                _scaffoldKey.currentState?.openEndDrawer();
-              },
-              icon: const Icon(
-                Icons.menu,
-              ),
-              tooltip: 'Acceder',
+          // if (widget.controller.isLogged)
+          IconButton(
+            onPressed: () {
+              _scaffoldKey.currentState?.openEndDrawer();
+            },
+            icon: const Icon(
+              Icons.menu,
             ),
+            tooltip: 'Acceder',
+          ),
         ],
       ),
       endDrawer: Drawer(
@@ -94,80 +217,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Builder(
-                builder: (BuildContext context) {
-                  const List<Node> nodes = [
-                    Node(
-                      label: 'Cursos',
-                      key: 'Cursos',
-                      data: 'Cursos',
-                      children: [
-                        Node(
-                          label: 'ADN DEL LIDER-2021-2',
-                          key: 'ADN DEL LIDER-2021-2',
-                          data: 'ADN DEL LIDER-2021-2',
-                          children: [
-                            Node(
-                              label: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-                              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-                              data: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-                            ),
-                            Node(
-                              label: 'Clase 2: El Líder Palmera',
-                              key: 'Clase 2: El Líder Palmera',
-                              data: 'Clase 2: El Líder Palmera',
-                            ),
-                            Node(
-                              label: 'Clase 3: El Líder Samurai',
-                              key: 'Clase 3: El Líder Samurai',
-                              data: 'Clase 3: El Líder Samurai',
-                            ),
-                            Node(
-                              label: 'Clase 4: El Líder Pacificador',
-                              key: 'Clase 4: El Líder Pacificador',
-                              data: 'Clase 4: El Líder Pacificador',
-                            ),
-                            Node(
-                              label: 'Clase 5: El lider planificador',
-                              key: 'Clase 5: El lider planificador',
-                              data: 'Clase 5: El lider planificador',
-                            ),
-                            Node(
-                              label: 'Clase 7: El Líder Entrenador',
-                              key: 'Clase 7: El Líder Entrenador',
-                              data: 'Clase 7: El Líder Entrenador',
-                            ),
-                            Node(
-                              label: 'Clase 8: El Líder Guerrero',
-                              key: 'Clase 8: El Líder Guerrero',
-                              data: 'Clase 8: El Líder Guerrero',
-                            ),
-                            Node(
-                              label: 'Clase 9: El Líder Matagigantes',
-                              key: 'Clase 9: El Líder Matagigantes',
-                              data: 'Clase 9: El Líder Matagigantes',
-                            ),
-                          ],
+              SizedBox(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: TreeView(
+                  controller: TreeViewController(children: nodes),
+                  onNodeTap: (key) {
+                    var _treeViewController =
+                        TreeViewController(children: nodes);
+                    Node selectedNode = _treeViewController.getNode(key)!;
+                    var selectedModel = selectedNode.data;
+                    if (selectedModel is NodeDataModel) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NodeScreen(
+                            controller: widget.controller,
+                            nodeData: selectedModel,
+                          ),
                         ),
-                      ],
-                    ),
-                  ];
-
-                  TreeViewController _treeViewController =
-                      TreeViewController(children: nodes);
-
-                  return SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    height: MediaQuery.of(context).size.height,
-                    child: TreeView(
-                      controller: _treeViewController,
-                      onNodeTap: (key) {
-                        Node selectedNode = _treeViewController.getNode(key)!;
-                        var selectedModel = selectedNode.data;
-                      },
-                    ),
-                  );
-                },
+                      );
+                    }
+                  },
+                ),
+              ),
+              const SafeArea(
+                child: Text('Derechos reservados'),
               ),
             ],
           ),
