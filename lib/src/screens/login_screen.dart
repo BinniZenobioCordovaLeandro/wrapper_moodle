@@ -26,95 +26,99 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: const Text('Inicia session'),
       ),
-      body: Form(
-        key: _formKey,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        child: SingleChildScrollView(
-          child: Wrap(
-            spacing: 50,
-            runSpacing: 50,
-            children: [
-              const SizedBox(),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    child: FractionallySizedBox(
-                      widthFactor: 0.9,
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Usuario',
-                        ),
-                        validator: (String? value) {
-                          if (value != null && value.isEmpty) {
-                            return 'Usuario requerido';
-                          }
-                          return null;
-                        },
-                        onChanged: (String? value) {
-                          setState(() {
-                            user = value;
-                          });
-                        },
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: FractionallySizedBox(
-                      widthFactor: 0.9,
-                      child: TextFormField(
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Contraseña',
-                        ),
-                        validator: (String? value) {
-                          if (value != null && value.isEmpty) {
-                            return 'Contraseña requerida';
-                          }
-                          return null;
-                        },
-                        onChanged: (String? value) {
-                          setState(() {
-                            password = value;
-                          });
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Center(
-                child: ElevatedButton(
-                  child: const Text('Iniciar sesión'),
-                  onPressed: () async {
-                    final FormState _form = _formKey.currentState!;
-                    if (_form.validate()) {
-                      if (await widget.controller
-                              .updateIsloged(user, password) ==
-                          true) {
-                        _form.save();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                HomeScreen(controller: widget.controller),
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          child: SingleChildScrollView(
+            child: Wrap(
+              spacing: 50,
+              runSpacing: 50,
+              children: [
+                const SizedBox(),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: FractionallySizedBox(
+                        widthFactor: 0.9,
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Usuario',
                           ),
-                        );
-                      } else {
-                        _form.reset();
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(const SnackBar(
-                          content: Text("Usuario o contraseña incorrectos"),
-                        ));
-                      }
-                    }
-                  },
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return 'Usuario requerido';
+                            }
+                            return null;
+                          },
+                          onChanged: (String? value) {
+                            setState(() {
+                              user = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: FractionallySizedBox(
+                        widthFactor: 0.9,
+                        child: TextFormField(
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            labelText: 'Contraseña',
+                          ),
+                          validator: (String? value) {
+                            if (value != null && value.isEmpty) {
+                              return 'Contraseña requerida';
+                            }
+                            return null;
+                          },
+                          onChanged: (String? value) {
+                            setState(() {
+                              password = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
+                Center(
+                  child: ElevatedButton(
+                    child: const Text('Iniciar sesión'),
+                    onPressed: () async {
+                      final FormState _form = _formKey.currentState!;
+                      if (_form.validate()) {
+                        if (await widget.controller
+                                .updateIsloged(user, password) ==
+                            true) {
+                          _form.save();
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(
+                                controller: widget.controller,
+                              ),
+                            ),
+                            (Route<dynamic> route) => false,
+                          );
+                        } else {
+                          _form.reset();
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            content: Text("Usuario o contraseña incorrectos"),
+                          ));
+                        }
+                      }
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
