@@ -2,6 +2,7 @@ import 'package:ccaguaviva/src/providers/url_launcher_provider.dart';
 import 'package:ccaguaviva/src/screens/login_screen.dart';
 import 'package:ccaguaviva/src/settings/settings_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_treeview/flutter_treeview.dart';
 
 class HomeScreen extends StatefulWidget {
   final SettingsController controller;
@@ -93,16 +94,80 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              ListView(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                children: [
-                  for (var i = 0; i < 20; i++)
-                    ListTile(
-                      title: Text('ListTile $i'),
-                      onTap: () {},
+              Builder(
+                builder: (BuildContext context) {
+                  const List<Node> nodes = [
+                    Node(
+                      label: 'Cursos',
+                      key: 'Cursos',
+                      data: 'Cursos',
+                      children: [
+                        Node(
+                          label: 'ADN DEL LIDER-2021-2',
+                          key: 'ADN DEL LIDER-2021-2',
+                          data: 'ADN DEL LIDER-2021-2',
+                          children: [
+                            Node(
+                              label: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+                              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+                              data: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+                            ),
+                            Node(
+                              label: 'Clase 2: El Líder Palmera',
+                              key: 'Clase 2: El Líder Palmera',
+                              data: 'Clase 2: El Líder Palmera',
+                            ),
+                            Node(
+                              label: 'Clase 3: El Líder Samurai',
+                              key: 'Clase 3: El Líder Samurai',
+                              data: 'Clase 3: El Líder Samurai',
+                            ),
+                            Node(
+                              label: 'Clase 4: El Líder Pacificador',
+                              key: 'Clase 4: El Líder Pacificador',
+                              data: 'Clase 4: El Líder Pacificador',
+                            ),
+                            Node(
+                              label: 'Clase 5: El lider planificador',
+                              key: 'Clase 5: El lider planificador',
+                              data: 'Clase 5: El lider planificador',
+                            ),
+                            Node(
+                              label: 'Clase 7: El Líder Entrenador',
+                              key: 'Clase 7: El Líder Entrenador',
+                              data: 'Clase 7: El Líder Entrenador',
+                            ),
+                            Node(
+                              label: 'Clase 8: El Líder Guerrero',
+                              key: 'Clase 8: El Líder Guerrero',
+                              data: 'Clase 8: El Líder Guerrero',
+                            ),
+                            Node(
+                              label: 'Clase 9: El Líder Matagigantes',
+                              key: 'Clase 9: El Líder Matagigantes',
+                              data: 'Clase 9: El Líder Matagigantes',
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                ],
+                  ];
+
+                  TreeViewController _treeViewController =
+                      TreeViewController(children: nodes);
+
+                  return SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    height: MediaQuery.of(context).size.height,
+                    child: TreeView(
+                      controller: _treeViewController,
+                      onNodeTap: (key) {
+                        Node selectedNode = _treeViewController.getNode(key)!;
+                        var selectedModel = selectedNode.data;
+                      },
+                    ),
+                  );
+                },
               ),
             ],
           ),
