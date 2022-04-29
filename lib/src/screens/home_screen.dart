@@ -351,16 +351,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               tooltip: 'Acceder',
             ),
-          // if (widget.controller.isLogged)
-          IconButton(
-            onPressed: () {
-              _scaffoldKey.currentState?.openEndDrawer();
-            },
-            icon: const Icon(
-              Icons.menu,
+          if (widget.controller.isLogged)
+            IconButton(
+              onPressed: () {
+                _scaffoldKey.currentState?.openEndDrawer();
+              },
+              icon: const Icon(
+                Icons.menu,
+              ),
+              tooltip: 'Acceder',
             ),
-            tooltip: 'Acceder',
-          ),
         ],
       ),
       endDrawer: Drawer(
