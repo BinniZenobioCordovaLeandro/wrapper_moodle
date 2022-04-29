@@ -23,118 +23,131 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Node> nodes = [
     Node(
-      label: 'Cursos',
-      key: 'Cursos',
-      data: 'Cursos',
+      label: 'Cursos de Aprendizaje',
+      key: 'Cursos de Aprendizaje',
+      data: 'Cursos de Aprendizaje',
+      expanded: true,
       children: [
         Node(
-          label: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
-          key: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
-          data: 'ADN DEL LIDER-2022-1 (Enero - Junio)',
+          label: 'SANTOS ESTA SEMANA (Abril)',
+          key: 'SANTOS ESTA SEMANA (Abril)',
+          data: 'SANTOS ESTA SEMANA (Abril)',
+          expanded: true,
           children: [
             Node(
-              label:
-                  'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
+              key: 'REFLEXION! - SERGIO HORNUNG',
+              label: 'REFLEXION! - SERGIO HORNUNG',
               data: NodeDataModel(
-                title:
-                    'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-                description: 'En este curso ',
-                date: 'Enero - Junio',
-                url: 'https://www.ccaguaviva.com/video',
-                urlVideo: 'https://www.youtube.com/watch?v=BBAyRBTfsOU',
-                urlImage: 'https://www.ccaguaviva.com/image',
+                title: 'REFLEXION! - SERGIO HORNUNG',
+                description:
+                    'En esta semana santa el gran SERGIO HORNUNG nos invita a reflexionar sobre nuestras ideas e intenciones para nuestro projimo.\n\nTemas:\n-El sentir de la vida\n-Demos gracias a dios\n-Como alabar a dios\n-Los secretos de la felicidad\n-Como celebrar con respeto\n-Comparte con el projimo\n-Presta atención a tu entorno\n-Que pasa si no oramos\n-Socializar es espectacular',
+                date: 'Abril 26, 2022',
+                datetime: '2022-04-26',
+                url:
+                    'https://www.youtube.com/watch?v=KHsBZHm1DbY&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=KHsBZHm1DbY&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery1image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%201.jpg',
               ),
             ),
             Node(
-              label: 'Clase 2: El Líder Palmera',
-              key: 'Clase 2: El Líder Palmera',
+              key: 'PRODIGIO! - DAVID SCARPETA',
+              label: 'PRODIGIO! - DAVID SCARPETA',
               data: NodeDataModel(
-                title: 'Clase 2: El Líder Palmera',
-                description: 'En este curso ',
-                date: 'Enero - Junio',
-                url: 'https://www.ccaguaviva.com/video',
-                urlVideo: 'https://www.ccaguaviva.com/video',
-                urlImage: 'https://www.ccaguaviva.com/image',
+                title: 'PRODIGIO! - DAVID SCARPETA',
+                description:
+                    'En esta semana santa el gran DAVID SCARPETA nos invita a REGOSIJARNOS por todas las gracias que nos da cristo.\n\nTemas:\n-Grita al cielo\n-Sientete bendecido\n-Da honraz a dios\n-Lo mejor de latinoamerica\n-Como amar a dios\n-Como ser bendecido\n-Que hay de la familia\n-Como ser profeta\n-bendicenos por todo\n-Comparte la Iglesia',
+                date: 'Abril 27, 2022',
+                datetime: '2022-04-27',
+                url:
+                    'https://www.youtube.com/watch?v=z_ZByQiX7rs&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=2',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=z_ZByQiX7rs&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=2',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery1image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%201.jpg',
               ),
             ),
             Node(
-              label: 'Clase 3: El Líder Samurai',
-              key: 'Clase 3: El Líder Samurai',
-              data: NodeDataModel(),
+              key: 'DIGNOS! - MARIA PAULA ARRÁZOLA',
+              label: 'DIGNOS! - MARIA PAULA ARRÁZOLA',
+              data: NodeDataModel(
+                title: 'DIGNOS! - MARIA PAULA ARRÁZOLA',
+                description:
+                    'En esta semana santa el gran MARIA PAULA ARRÁZOLA nos invita a sentir regocijo por ser DIGNOS de todas las gracias de DIOS\n\nTemas:\n-Demos gracias\n-Respeta a la familia\n-La dignidad ante todo\n-Comparte lo que Dios te brinda\n-Habre de la palabra de dios\n-El ser humano ante dios\n-Sientete vivo\n-Como mantener tu matrimonio\n-Los hijos son bendicion\n-Da gracias a dios',
+                date: 'Abril 28, 2022',
+                datetime: '2022-04-28',
+                url:
+                    'https://www.youtube.com/watch?v=1OJ_sKPUudg&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=3',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=1OJ_sKPUudg&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=3',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery1image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%201.jpg',
+              ),
             ),
             Node(
-              label: 'Clase 4: El Líder Pacificador',
-              key: 'Clase 4: El Líder Pacificador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 5: El lider planificador',
-              key: 'Clase 5: El lider planificador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 7: El Líder Entrenador',
-              key: 'Clase 7: El Líder Entrenador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 8: El Líder Guerrero',
-              key: 'Clase 8: El Líder Guerrero',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 9: El Líder Matagigantes',
-              key: 'Clase 9: El Líder Matagigantes',
-              data: NodeDataModel(),
+              key: 'SANTOS! - MIGUEL ARRAZOLA',
+              label: 'SANTOS! - MIGUEL ARRAZOLA',
+              data: NodeDataModel(
+                title: 'SANTOS! - MIGUEL ARRAZOLA',
+                description:
+                    'En esta semana santa el gran MIGUEL ARRAZOLA nos invita a sentirnos SANTIFICADOS por haber sido elegidos como hijos de DIOS!\n\nTemas:\n-Viva el Peru\n-Los entretenimientos del hombre\n-Vicios que debemos evitar\n-Como reconocer la palabra de dios\n-Tiempo en la Iglesia\n-Bendicion de los amigos\n-Como viajar\n-Listos para la palabra del señor\n-La comunidad lo es todo\n-Los Peruanos son muy populares\n-Como ser fortificado\n-Cronicas de cristo',
+                date: 'Abril 29, 2022',
+                datetime: '2022-04-29',
+                url:
+                    'https://www.youtube.com/watch?v=lnH9xDHuHvk&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=4',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=lnH9xDHuHvk&list=PLH2NKiR1Ffd37DdhXE0pU8P4k1IL3zKaB&index=4',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery1image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%201.jpg',
+              ),
             ),
           ],
         ),
         Node(
-          label: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
-          key: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
-          data: 'ADN DEL LIDER-2022-2 (Julio - Diciembre)',
+          label: 'CIELOS ABIERTOS (MARZO)',
+          key: 'CIELOS ABIERTOS (MARZO)',
+          data: 'CIELOS ABIERTOS (MARZO)',
+          expanded: true,
           children: [
             Node(
+              key: 'Clase 1: Como despertar de la tristeza - por CARLA HORNUNG',
               label:
-                  'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-              key: 'Clase 1: La iglesia de Hechos era llena del Espíritu Santo',
-              data: NodeDataModel(),
+                  'Clase 1: Como despertar de la tristeza - por CARLA HORNUNG',
+              data: NodeDataModel(
+                title:
+                    'Clase 1: Como despertar de la tristeza - por CARLA HORNUNG',
+                description:
+                    'En esta clase aprenderás a despertar de la tristeza y a ser más feliz.\n Tomando en cuenta todas las cosas buenas que tienes y debes de disfrutar, para sentirte mejor y ser feliz como persona.\n\nTEMAS:\n-Matrimonio\n-El dia y la noche\n-Viajes de diversion\n-Relajarse es la clave\n-No a los extremos\n-La felicidad es la clave\n-Dios con nosotros',
+                date: 'Marzo 1, 2022',
+                datetime: '2022-03-01',
+                url:
+                    'https://www.youtube.com/watch?v=MBBLpFZ4N9w&list=PLH2NKiR1Ffd0PwfT7qoQaw-olqVBZs4-6&index=1',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=MBBLpFZ4N9w&list=PLH2NKiR1Ffd0PwfT7qoQaw-olqVBZs4-6&index=1',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery3image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%203.jpg',
+              ),
             ),
             Node(
-              label: 'Clase 2: El Líder Palmera',
-              key: 'Clase 2: El Líder Palmera',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 3: El Líder Samurai',
-              key: 'Clase 3: El Líder Samurai',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 4: El Líder Pacificador',
-              key: 'Clase 4: El Líder Pacificador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 5: El lider planificador',
-              key: 'Clase 5: El lider planificador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 7: El Líder Entrenador',
-              key: 'Clase 7: El Líder Entrenador',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 8: El Líder Guerrero',
-              key: 'Clase 8: El Líder Guerrero',
-              data: NodeDataModel(),
-            ),
-            Node(
-              label: 'Clase 9: El Líder Matagigantes',
-              key: 'Clase 9: El Líder Matagigantes',
-              data: NodeDataModel(),
+              key:
+                  'Clase 2: Manda el espiritu santa para EMPODERARNOS - por SERGIO HORNUNG',
+              label:
+                  'Clase 2: Manda el espiritu santa para EMPODERARNOS - por SERGIO HORNUNG',
+              data: NodeDataModel(
+                title:
+                    'Clase 2: Manda el espiritu santa para EMPODERARNOS - por SERGIO HORNUNG',
+                description:
+                    'En esta clase aprenderás a que el espiritu santo fue mas que un regalo, fue una herramienta de empoderamiento para poder tener una voz ante todos los echos que sucitan en el mundo y con nuestros conyacientes.\n\nTemas:\n-Por que los apostoles\n-Predicar es bueno\n-El por que de las lenguas\n-La capacidad de la mente ante el cuerto\n-Importancia de la vida\n-Como no trabajar\n-Sentir el dia a dia\n-Vivir por los nuestros',
+                date: 'Marzo 1, 2022',
+                datetime: '2022-03-01',
+                url:
+                    'https://www.youtube.com/watch?v=yjxFds5RhMs&list=PLH2NKiR1Ffd0PwfT7qoQaw-olqVBZs4-6&index=2',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=yjxFds5RhMs&list=PLH2NKiR1Ffd0PwfT7qoQaw-olqVBZs4-6&index=2',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery3image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%203.jpg',
+              ),
             ),
           ],
         ),
@@ -208,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               AppBar(
-                title: const Text('Agua Viva'),
+                title: const Text('Tus cursos!'),
                 actions: [
                   IconButton(
                     onPressed: () => Navigator.of(context).pop(),
