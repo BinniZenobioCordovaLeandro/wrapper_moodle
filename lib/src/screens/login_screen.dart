@@ -23,9 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Inicia session'),
-      ),
+      appBar: AppBar(),
       body: SafeArea(
         child: Form(
           key: _formKey,
@@ -40,6 +38,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: SizedBox(
+                        height: 100,
+                        child: Center(
+                          child: Text(
+                            'Inicia session',
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       width: double.infinity,
                       child: FractionallySizedBox(
@@ -88,33 +98,36 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 Center(
-                  child: ElevatedButton(
-                    child: const Text('Iniciar sesión'),
-                    onPressed: () async {
-                      final FormState _form = _formKey.currentState!;
-                      if (_form.validate()) {
-                        if (await widget.controller
-                                .updateIsloged(user, password) ==
-                            true) {
-                          _form.save();
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(
-                                controller: widget.controller,
+                  child: FractionallySizedBox(
+                    widthFactor: 0.9,
+                    child: ElevatedButton(
+                      child: const Text('Iniciar sesión'),
+                      onPressed: () async {
+                        final FormState _form = _formKey.currentState!;
+                        if (_form.validate()) {
+                          if (await widget.controller
+                                  .updateIsloged(user, password) ==
+                              true) {
+                            _form.save();
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomeScreen(
+                                  controller: widget.controller,
+                                ),
                               ),
-                            ),
-                            (Route<dynamic> route) => false,
-                          );
-                        } else {
-                          _form.reset();
-                          ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
-                            content: Text("Usuario o contraseña incorrectos"),
-                          ));
+                              (Route<dynamic> route) => false,
+                            );
+                          } else {
+                            _form.reset();
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: Text("Usuario o contraseña incorrectos"),
+                            ));
+                          }
                         }
-                      }
-                    },
+                      },
+                    ),
                   ),
                 ),
               ],

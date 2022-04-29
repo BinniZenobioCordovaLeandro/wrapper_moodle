@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 description: 'En este curso ',
                 date: 'Enero - Junio',
                 url: 'https://www.ccaguaviva.com/video',
-                urlVideo: 'https://www.ccaguaviva.com/video',
+                urlVideo: 'https://www.youtube.com/watch?v=BBAyRBTfsOU',
                 urlImage: 'https://www.ccaguaviva.com/image',
               ),
             ),
@@ -204,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       endDrawer: Drawer(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               AppBar(
@@ -307,8 +308,9 @@ class _HomeScreenState extends State<HomeScreen> {
               AspectRatio(
                 aspectRatio: 6 / 5,
                 child: PageView.builder(
-                  controller: PageController(viewportFraction: 0.8),
+                  controller: PageController(viewportFraction: 0.91),
                   itemCount: 3,
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     final data = [
                       {
@@ -337,43 +339,42 @@ class _HomeScreenState extends State<HomeScreen> {
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: Colors.black.withOpacity(0.3),
                       ),
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                      ),
-                      child: Column(
-                        children: [
-                          AspectRatio(
-                            aspectRatio: 2 / 1,
-                            child: Image.network(
-                              data[index]['image']!,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          FractionallySizedBox(
-                            widthFactor: 0.95,
-                            child: Container(
-                              padding: const EdgeInsets.all(16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    data[index]['title']!,
-                                    style:
-                                        Theme.of(context).textTheme.headline6,
-                                  ),
-                                  const SizedBox(height: 16),
-                                  Text(
-                                    data[index]['description']!,
-                                    style:
-                                        Theme.of(context).textTheme.bodyText1,
-                                  ),
-                                ],
+                      margin: const EdgeInsets.symmetric(horizontal: 2),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            AspectRatio(
+                              aspectRatio: 2 / 1,
+                              child: Image.network(
+                                data[index]['image']!,
+                                fit: BoxFit.cover,
                               ),
                             ),
-                          ),
-                        ],
+                            FractionallySizedBox(
+                              widthFactor: 0.95,
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      data[index]['title']!,
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                    ),
+                                    const SizedBox(height: 16),
+                                    Text(
+                                      data[index]['description']!,
+                                      style:
+                                          Theme.of(context).textTheme.bodyText1,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -443,42 +444,45 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Container(
                         decoration: BoxDecoration(
                           color: Colors.black.withOpacity(0.3),
-                          borderRadius: BorderRadius.circular(
-                            15,
-                          ),
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        padding: const EdgeInsets.all(16),
-                        child: Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children: [
-                            AspectRatio(
-                              aspectRatio: 3 / 1,
-                              child: Image.network(
-                                data[index]['image']!,
-                                fit: BoxFit.fitHeight,
-                              ),
+                        child: Card(
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            child: Wrap(
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: [
+                                AspectRatio(
+                                  aspectRatio: 3 / 1,
+                                  child: Image.network(
+                                    data[index]['image']!,
+                                    fit: BoxFit.fitHeight,
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    data[index]['title']!,
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    data[index]['description']!,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium
+                                        ?.copyWith(
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                data[index]['title']!,
-                                style: Theme.of(context).textTheme.subtitle1,
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                data[index]['description']!,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium
-                                    ?.copyWith(
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       );
                     },
@@ -647,38 +651,49 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
-                color: Colors.grey.withOpacity(0.3),
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: FractionallySizedBox(
-                  widthFactor: 0.9,
-                  child: Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      Text(
-                        'NUESTRA ACADEMIA',
-                        style: Theme.of(context).textTheme.headline6,
+                child: Card(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    child: FractionallySizedBox(
+                      widthFactor: 0.9,
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: [
+                          Text(
+                            'NUESTRA ACADEMIA',
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          Text(
+                            'Desarrolla una vida de Cristo Céntrica a través de nuestros cursos diseñados para ti, avanza en el propósito que Dios tiene para tu vida',
+                            style: Theme.of(context).textTheme.subtitle2,
+                          ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: Text(
+                              'escuela@ccaguaviva.com',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          ),
+                          Text(
+                            'Jr. Risso 269 - Lince',
+                            style: Theme.of(context).textTheme.subtitle2,
+                          ),
+                        ],
                       ),
-                      Text(
-                        'Desarrolla una vida de Cristo Céntrica a través de nuestros cursos diseñados para ti, avanza en el propósito que Dios tiene para tu vida',
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                      Text(
-                        'escuela@ccaguaviva.com',
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                      Text(
-                        '+51 997 590 457',
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                      Text(
-                        'Jr. Risso 269 - Lince',
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                    ],
+                    ),
                   ),
+                ),
+              ),
+              SizedBox(
+                child: TextButton.icon(
+                  onPressed: () {
+                    UrlLauncherProvider().makePhoneCall('+51997590457');
+                  },
+                  icon: const Icon(Icons.call_rounded),
+                  label: const Text('+51 997 590 457'),
                 ),
               ),
               const Center(

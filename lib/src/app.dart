@@ -1,5 +1,7 @@
 import 'package:ccaguaviva/src/screens/home_screen.dart';
 import 'package:ccaguaviva/src/screens/web_view_screen.dart';
+import 'package:ccaguaviva/src/themes/dark_theme.dart';
+import 'package:ccaguaviva/src/themes/light_theme.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -39,8 +41,8 @@ class MyApp extends StatelessWidget {
           ],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
-          theme: ThemeData(),
-          darkTheme: ThemeData.dark(),
+          theme: LightTheme().get(),
+          darkTheme: DarkTheme().get(),
           themeMode: settingsController.themeMode,
           home: settingsController.isWebMode
               ? const WebViewScreen(
