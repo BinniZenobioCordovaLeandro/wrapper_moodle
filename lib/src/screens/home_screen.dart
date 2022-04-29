@@ -28,6 +28,19 @@ class _HomeScreenState extends State<HomeScreen> {
       data: 'Cursos de Aprendizaje',
       expanded: true,
       children: [
+        const Node(
+          label: 'DISCIPULADO I (Junio - Agosto)',
+          key: 'DISCIPULADO I (Junio - Agosto)',
+          data: 'DISCIPULADO I (Junio - Agosto)',
+          expanded: true,
+          children: [
+            Node(
+              label: '<Fechas aun no disponibles>',
+              key: '<Fechas aun no disponibles>',
+              data: '<Fechas aun no disponibles>',
+            ),
+          ],
+        ),
         Node(
           label: 'SANTOS ESTA SEMANA (Abril)',
           key: 'SANTOS ESTA SEMANA (Abril)',
@@ -105,9 +118,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         Node(
-          label: 'CIELOS ABIERTOS (MARZO)',
-          key: 'CIELOS ABIERTOS (MARZO)',
-          data: 'CIELOS ABIERTOS (MARZO)',
+          label: 'CIELOS ABIERTOS (Marzo)',
+          key: 'CIELOS ABIERTOS (Marzo)',
+          data: 'CIELOS ABIERTOS (Marzo)',
           expanded: true,
           children: [
             Node(
@@ -151,6 +164,141 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
+        Node(
+          label: 'TU ELECCION!, TU FUTURO! (Diciembre 2021)',
+          key: 'TU ELECCION!, TU FUTURO! (Diciembre 2021)',
+          data: 'TU ELECCION!, TU FUTURO! (Diciembre 2021)',
+          expanded: true,
+          children: [
+            Node(
+              key: 'Clase 1: Que hacer ante tanta incertidumbre',
+              label: 'Clase 1: Que hacer ante tanta incertidumbre',
+              data: NodeDataModel(
+                title: 'Clase 1: Que hacer ante tanta incertidumbre',
+                description:
+                    'Como ser una persona justa y honesta con buen corazon, como gobernar nuestro ser de forma integra y respetandonos.\n\nTemas:\n-Como pedir ayuda\n-Los jovenes\n-La sabiduria\n-Tus relaciones\n-Lo sobrenatural\n-Encuentro de confraternidad\n-El anelo de todos\n-La vida',
+                date: 'Diciembre 20, 2021',
+                datetime: '2021-12-20',
+                url:
+                    'https://www.youtube.com/watch?v=AjcbFDdgbQ0&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=AjcbFDdgbQ0&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery2image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%202.jpg',
+              ),
+            ),
+            Node(
+              key: 'Clase 2: La iglesia y tu futuro',
+              label: 'Clase 2: La iglesia y tu futuro',
+              data: NodeDataModel(
+                title: 'Clase 2: La iglesia y tu futuro',
+                description:
+                    'El rencor y el odio corrompen la vida, debes de dejar de pensar en lo malo y evitar las emociones negativas antes de tomar decisiones.\n\nTemas:\n-Dominio propio\n-Despierta del enojo\n-Toma elecciones sabias\n-Ayudate a superar\n-Liberate\n-No elijas si estas triste\n-Todos los dias son malos?\n-Debes de ser feliz\n-Se feliz!',
+                date: 'Diciembre 21, 2021',
+                datetime: '2021-12-21',
+                url:
+                    'https://www.youtube.com/watch?v=T-IeqOLxsBo&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG&index=2',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=T-IeqOLxsBo&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG&index=2',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery2image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%202.jpg',
+              ),
+            ),
+            Node(
+              key: 'Clase 3: Promesas de DIOS',
+              label: 'Clase 3: Promesas de DIOS',
+              data: NodeDataModel(
+                title: 'Clase 3: Promesas de DIOS',
+                description:
+                    'Aprende que a pesar de las promesas de DIOS, nada es facil por lo que debes estar convencido que no todo es facil y requiere de ezfuerzo.\n\nTemas:\n-San pablo\n-Como no decepcionarse\n-El espiritu santo me guia\n-Da pasos firmes\n-Busca tu proposito\n-Camina a tu destino\n-Evita las carceles espirituales\n-Se bendecido\n-Camina con rumbo\n-Da pasos hacia dios',
+                date: 'Diciembre 22, 2021',
+                datetime: '2021-12-22',
+                url:
+                    'https://www.youtube.com/watch?v=_pa7wPTwkQY&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=_pa7wPTwkQY&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery2image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%202.jpg',
+              ),
+            ),
+            Node(
+              key: 'Clase 4: Obediente y bendecido',
+              label: 'Clase 4: Obediente y bendecido',
+              data: NodeDataModel(
+                title: 'Clase 4: Obediente y bendecido',
+                description:
+                    'Aprende a ser obediente para ser bendecido, evita que otros eligan por ti, se feliz por tu cuenta.\n\nTemas:\n-Evita el mal\n-Elije obedecer\n-Las ordenes de DIOS\n-No escojas la popular\n-Elecciones inteligentes\n-Siempre ten en cuenta la vida\n-No evites ofender por tus decisiones\n-Solo vales tu como persona\n-Siempre toma decisiones',
+                date: 'Diciembre 23, 2021',
+                datetime: '2021-12-23',
+                url:
+                    'https://www.youtube.com/watch?v=EsYeA2ETMcU&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=EsYeA2ETMcU&list=PLH2NKiR1Ffd2lMXlDdgFx0piZ23WDv6sG',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery2image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%202.jpg',
+              ),
+            ),
+          ],
+        ),
+        Node(
+          label: 'LO QUE ME PREDICO A MI MISMO (Octubre 2021)',
+          key: 'LO QUE ME PREDICO A MI MISMO (Octubre 2021)',
+          data: 'LO QUE ME PREDICO A MI MISMO (Octubre 2021)',
+          expanded: true,
+          children: [
+            Node(
+              key: 'Clase 1: Tu elección, tu futuro!',
+              label: 'Clase 1: Tu elección, tu futuro!',
+              data: NodeDataModel(
+                title: 'Clase 1: Tu elección, tu futuro!',
+                description:
+                    'En esta clase aprenderas que cuando tienes una elección, tu futuro depende de ti. Por lo que es muy importante tener en cuenta el por que de tus acciones y tener mucha cautela en ellas, para tomar la mejor eleccion posible.\n\nTemas:\n-La juventud\n-La vitalidad\n-Que es elejir\n-Como vivir\n-Como pensar\n-Que hacer para ser mejor\n-Cada paso cuenta\n-El objetivo se cumplira\n-Toma las decisiones ya\n-Como escoger la mejor opcion\n-El matrimonio y las opciones',
+                date: 'Octubre 20, 2021',
+                datetime: '2021-10-20',
+                url:
+                    'https://www.youtube.com/watch?v=kkzdj2XCRTM&list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlVideo:
+                    'https://www.youtube.com/watch?v=kkzdj2XCRTM&list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery8image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%208.jpg',
+              ),
+            ),
+            Node(
+              key: 'Clase 2: Respetate y saldras adelante.',
+              label: 'Clase 2: Respetate y saldras adelante.',
+              data: NodeDataModel(
+                title: 'Clase 2: Respetate y saldras adelante.',
+                description:
+                    'En esta clase obtendras un mantra donde debes respetarte para poder salir adelante, y mejorar en las cosas que realizas en tu dia a dia para que al cabo de determinado tiempo todo sume y puedas ser un gran ser humano y manehar tus emociones.\n\nTemas:\n-Tu vida\n-Tu futuro\n-Tus elecciones\n-El mañana\n-Tu historia\n-Tu vida\n-Quien eres\n-Factores de vida\n-Lejos de la tecnologia\n-La sabiduria\n-Con la edad llega la sabiduria\n-Aprende de los mayores',
+                date: 'Octubre 21, 2021',
+                datetime: '2021-10-21',
+                url:
+                    'https://youtu.be/P6f_691B55E?list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlVideo:
+                    'https://youtu.be/P6f_691B55E?list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery8image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%208.jpg',
+              ),
+            ),
+            Node(
+              key: 'Clase 3: La vida es una serie de eventos.',
+              label: 'Clase 3: La vida es una serie de eventos.',
+              data: NodeDataModel(
+                title: 'Clase 3: La vida es una serie de eventos.',
+                description:
+                    'Aprende a marcar tu caminar con dios y a marcar buenas decisiones segun los pasos que dios te brinda.\n\nTemas:\n-Buenas decisiones\n-Como ir a Jerusalen\n-El espiritu santo\n-Mi vida y el valor de cristo\n-Jesus y el evangelio\n-Gracia de dios\n-El predicador apostol Pablo\n-Pasion por dios\n-Saber tomar decisiones\n-El espiritu santo ayuda\n-Dejate guiar por\n-Ve a jerusalen',
+                date: 'Octubre 22, 2021',
+                datetime: '2021-10-22',
+                url:
+                    'https://youtu.be/hgzVUYQiD9I?list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlVideo:
+                    'https://youtu.be/hgzVUYQiD9I?list=PLH2NKiR1Ffd2XxQwVNDl3Li8uGbJdMVxV',
+                urlImage:
+                    'https://www.aulavirtual.ccaguaviva.website/pluginfile.php/1/theme_academic/gallery8image/1640954218/Comunidad%20Cristiana%20Agua%20Viva%208.jpg',
+              ),
+            ),
+          ],
+        )
       ],
     ),
   ];
@@ -255,8 +403,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              const SafeArea(
-                child: Text('Derechos reservados'),
+              const SizedBox(
+                height: 56,
+                child: Center(child: Text('Derechos reservados')),
               ),
             ],
           ),
